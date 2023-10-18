@@ -8,7 +8,7 @@ const port = 3001;
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-mongoose.connect("mongodb+srv://admin:hS4JfB9mrw9i1LYy@cluster0.lyg7lci.mongodb.net/?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://user:pass@cluster0.lyg7lci.mongodb.net/?retryWrites=true&w=majority");
 
 const itemsSchema  = {
     name: String
