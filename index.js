@@ -41,6 +41,19 @@ app.get("/", (req, res) => {
   })
 })
 
+app.post("/", (req, res) => {
+    const itemName = req.body.newItem;
+    const listName = req.body.list;
+
+    const item = new Item ({
+        name : itemName
+    });
+    item.save().then(function(){
+        console.log('saved');
+        res.redirect("/");
+    })
+})
+
 app.get("/about", (req, res) => {
     res.render("about");
 })
