@@ -1,15 +1,18 @@
 <%- include('header') -%>
     <div class="box" id="heading">
-        <h1>List</h1>
+        <h1><%= listTitle %></h1>
     </div>
     <div class="box">
-        <form action="">
-            <div class="item">
-                <input type="checkbox" name="checkbox" onchange="this.form.submit()">
-                <p>Item</p>
-            </div>
-            <input type="hidden" name="listName">
-        </form>
+        <% newListItems?.forEach(item => { %>
+            <form action="">
+                <div class="item">
+                    <input type="checkbox" name="checkbox" onchange="this.form.submit()">
+                    <p><%= item.name %></p>
+                </div>
+                <input type="hidden" name="listName">
+            </form>
+        <% }); %>
+       
 
         <form action="">
             <input type = "text" name="newItem" placeholder="New Item">
